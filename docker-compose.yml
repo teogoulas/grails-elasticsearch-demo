@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.8.0
+    container_name: elasticsearch
+    environment:
+      - "ELASTIC_USERNAME=demoUser"
+      - "ELASTIC_PASSWORD=Asd123!."
+      - "discovery.type=single-node"
+      - "node.name=elasticsearch-demo"
+      - "cluster.name=demo-cluster"
+      - "network.host=0.0.0.0"
+      - "bootstrap.memory_lock=true"
+      - "http.cors.enabled=true"
+      - "http.cors.allow-origin=https?://((192|0).(168|0).(99|0).(100|0)|localhost)(:[0-9]+)?"
+      - "http.cors.allow-headers=Authorization,X-Requested-With,Content-Length,Content-Type"
+      - "http.cors.allow-credentials=true"
+      - "MAX_MAP_COUNT=262144"
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+      - 9200:9200
+      - 9300:9300
+    restart: unless-stopped
