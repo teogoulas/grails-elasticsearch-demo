@@ -33,7 +33,7 @@ class BootStrap {
 
     ProjectDataService projectDataService
 
-    static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")
+    static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
 
     def init = { servletContext ->
         for (Map<String, String> projectInfo : GRAILS_PROJECTS) {

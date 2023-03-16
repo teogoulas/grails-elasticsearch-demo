@@ -20,4 +20,22 @@ class Project {
     static searchable = {
         name boost: 2.0
     }
+
+    static mapping = {
+        name type: 'text'
+        summary type: 'text'
+    }
+
+    Map toJson() {
+        return [
+                'name'         : name,
+                'summary'      : summary,
+                'beginDate'    : beginDate,
+                'endDate'      : endDate,
+                'northLatitude': northLatitude,
+                'southLatitude': southLatitude,
+                'westLatitude' : westLatitude,
+                'eastLatitude' : eastLatitude
+        ]
+    }
 }

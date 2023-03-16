@@ -1,7 +1,6 @@
 package elasticsearch.demo
 
 
-import grails.rest.*
 import grails.converters.*
 import groovy.transform.CompileStatic
 

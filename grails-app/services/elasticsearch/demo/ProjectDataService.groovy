@@ -1,12 +1,10 @@
 package elasticsearch.demo
 
 import grails.gorm.services.Service
-import grails.gorm.transactions.Transactional
 import groovy.transform.CompileStatic
 
 import java.time.LocalDateTime
 
-@Transactional
 @CompileStatic
 @Service(Project)
 interface ProjectDataService {

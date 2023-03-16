@@ -2,10 +2,14 @@ model {
     Long total
     List searchResults
     Map scores
+    Map sort
+    Map aggregations
 }
 
 json {
     totalCount total
     results g.render(searchResults)
     scores g.render(scores)
+    sort g.render(sort)
+    aggregations g.render(aggregations)
 }
